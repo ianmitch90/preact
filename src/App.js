@@ -25,12 +25,12 @@ export default class App extends Component {
 
     return <div className="App">
       <div className="App-heading App-flex">
-        <h2>{this.state.toggleLNG ? 'Current Time' : '今の時間'}</h2>
+        <h1>{this.state.toggleLNG ? 'Current Time' : '今の時間'}</h1>
         <button onClick={this.languageHandler}>🇯🇵/🇺🇸</button>
         <h3><NavBar/></h3>
       </div>
-        <h3> some sort of descriptive statment.</h3>
-        <Date/>
+        
+      <Date/>
      
       
     </div>

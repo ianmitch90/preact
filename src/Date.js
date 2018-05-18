@@ -1,9 +1,6 @@
 import { h, render, Component } from 'preact';
 
 
-
-
-
 export default class Date extends Component {
 
     constructor(props){
@@ -15,7 +12,11 @@ export default class Date extends Component {
                         name : {
                             first : '',
                             last : ''
-                        }
+                        },
+                        picture : {
+                            large : ''
+                        },
+                        dob : ''
 
                     }
                 ]
@@ -53,12 +54,16 @@ export default class Date extends Component {
     
     
   render() {
-      console.log(this.state.DateData.results[0].name.first)
+
     return (
         
       <div>
-        <h2>People of Time!</h2>
         <div className='timePerson'>
+        <h2>People of Time!</h2>
+        <h2>Time Traveler from : {this.state.DateData.results[0].dob}</h2>
+        <div classname='timepersonPic'>
+            <img src={this.state.DateData.results[0].picture.large}/>
+        </div>
         <h1>{this.state.DateData.results[0].name.first} {this.state.DateData.results[0].name.last}</h1>
         </div>
         
