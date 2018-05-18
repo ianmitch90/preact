@@ -1,19 +1,37 @@
 import './App.css'
+import NavBar from './NavBar'
 
 import {h, Component} from 'preact'
 
+
 export default class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      toggleLNG : true
+    }
+
+    this.languageHandler = this.languageHandler.bind(this)
+  }
+
+  languageHandler(){
+    this.setState(prevState => ({
+      toggleLNG : !prevState.toggleLNG
+    }))
+  }
   render() {
+
+
+
     return <div className="App">
       <div className="App-heading App-flex">
-        <h2>
-          Welcome to <img alt="Preact" src={require('./preact-name.svg')} style="height: 1.8em; vertical-align: middle;"/>
-        </h2>
+        <h2>{this.state.toggleLNG ? 'Current Time' : '今の時間'}</h2>
+        <button onClick={this.languageHandler}>🇯🇵/🇺🇸</button>
+        <h3><NavBar/></h3>
       </div>
-      <div className="App-instructions App-flex">
-        <img className="App-logo" src={require('./preact-logo.svg')}/>
-        <p>Edit <code>src/App.js</code> and save to hot reload your changes.</p>
-      </div>
+        <h3> some sort of descriptive statment.</h3>
+     
+      
     </div>
   }
 }
