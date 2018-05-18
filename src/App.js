@@ -1,6 +1,6 @@
 import './App.css'
 import NavBar from './NavBar'
-
+import Date from './Date'
 import {h, Component} from 'preact'
 
 
@@ -30,6 +30,7 @@ export default class App extends Component {
         <h3><NavBar/></h3>
       </div>
         <h3> some sort of descriptive statment.</h3>
+        <Date/>
      
       
     </div>
