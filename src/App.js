@@ -1,5 +1,5 @@
 import './App.css'
-import NavBar from './NavBar'
+import Clock from './Clock'
 import Date from './Date'
 import {h, Component} from 'preact'
 
@@ -27,7 +27,7 @@ export default class App extends Component {
       <div className="App-heading App-flex">
         <h1>{this.state.toggleLNG ? 'Current Time' : '今の時間'}</h1>
         <button onClick={this.languageHandler}>🇯🇵/🇺🇸</button>
-        <h3><NavBar/></h3>
+        <h3><Clock/></h3>
       </div>
         
       <Date/>

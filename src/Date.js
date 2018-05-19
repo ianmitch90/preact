@@ -35,17 +35,17 @@ export default class Date extends Component {
             console.log(json)
         })
 
-        // this.interval = setInterval(() => {
-        //     fetch('https://randomuser.me/api/?nat=us')
-        //     .then(r=>r.json())
-        //     .then(json=>{
-        //         this.setState({
-        //         DateData : json
-        //      })
+        this.interval = setInterval(() => {
+            fetch('https://randomuser.me/api/?nat=us')
+            .then(r=>r.json())
+            .then(json=>{
+                this.setState({
+                DateData : json
+             })
              
-        //      console.log(json)
-        //     })
-        // }, 20000)
+             console.log(json)
+            })
+        }, 10000)
     }
 
     componentWillUnmount(){
@@ -62,9 +62,9 @@ export default class Date extends Component {
         <h2>People of Time!</h2>
         <h2>Time Traveler from : {this.state.DateData.results[0].dob}</h2>
         <div classname='timepersonPic'>
-            <img src={this.state.DateData.results[0].picture.large}/>
+            <img className='roll-in-blurred-bottom' src={this.state.DateData.results[0].picture.large}/>
         </div>
-        <h1>{this.state.DateData.results[0].name.first} {this.state.DateData.results[0].name.last}</h1>
+        <h1 className='flicker-in-1'>{this.state.DateData.results[0].name.first} {this.state.DateData.results[0].name.last}</h1>
         </div>
         
       </div>
